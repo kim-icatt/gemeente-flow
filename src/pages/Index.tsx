@@ -1,11 +1,36 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { DashboardStats } from "@/components/DashboardStats";
+import { ProductList } from "@/components/ProductList";
+import { useNavigate } from "react-router-dom";
 
 const Index = () => {
+  const navigate = useNavigate();
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <div className="space-y-8">
+      <div>
+        <h1 className="text-3xl font-heading font-bold text-foreground">
+          Dashboard
+        </h1>
+        <p className="text-muted-foreground mt-1">
+          Overzicht van uw producten- en dienstencatalogus
+        </p>
+      </div>
+
+      <DashboardStats />
+
+      <div>
+        <div className="flex items-center justify-between mb-4">
+          <h2 className="text-xl font-heading font-semibold text-foreground">
+            Recente producten
+          </h2>
+          <button
+            onClick={() => navigate("/producten")}
+            className="text-sm text-primary hover:underline"
+          >
+            Alle producten bekijken →
+          </button>
+        </div>
+        <ProductList />
       </div>
     </div>
   );
