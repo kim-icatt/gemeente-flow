@@ -1,4 +1,4 @@
-import { LayoutDashboard, FileText, RefreshCw, Settings } from "lucide-react";
+import { LayoutDashboard, FileText, Globe, Settings } from "lucide-react";
 import { NavLink } from "@/components/NavLink";
 import { useLocation } from "react-router-dom";
 import {
@@ -17,7 +17,7 @@ import {
 const navItems = [
   { title: "Dashboard", url: "/", icon: LayoutDashboard },
   { title: "Producten", url: "/producten", icon: FileText },
-  { title: "Synchronisatie", url: "/sync", icon: RefreshCw },
+  { title: "Mijn landelijke producten", url: "/landelijke-producten", icon: Globe },
   { title: "Instellingen", url: "/instellingen", icon: Settings },
 ];
 

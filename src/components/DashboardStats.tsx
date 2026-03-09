@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { FileText, CheckCircle2, AlertTriangle, FileEdit } from "lucide-react";
+import { FileText, CheckCircle2, AlertTriangle, Globe } from "lucide-react";
 import { mockProducts } from "@/data/mockProducts";
 
 export function DashboardStats() {
@@ -10,9 +10,7 @@ export function DashboardStats() {
   const outdated = mockProducts.filter(
     (p) => p.externalSyncStatus === "outdated" || p.internalSyncStatus === "outdated"
   ).length;
-  const drafts = mockProducts.filter(
-    (p) => p.externalSyncStatus === "draft" || p.internalSyncStatus === "draft"
-  ).length;
+  const landelijk = mockProducts.filter((p) => p.isLandelijk).length;
 
   const stats = [
     {
@@ -30,16 +28,16 @@ export function DashboardStats() {
       bg: "bg-success/10",
     },
     {
-      label: "Verouderd",
+      label: "Afwijkingen",
       value: outdated,
       icon: AlertTriangle,
       color: "text-warning",
       bg: "bg-warning/10",
     },
     {
-      label: "Concepten",
-      value: drafts,
-      icon: FileEdit,
+      label: "Landelijke producten",
+      value: landelijk,
+      icon: Globe,
       color: "text-info",
       bg: "bg-info/10",
     },
