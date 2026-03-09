@@ -7,7 +7,7 @@ import { AppLayout } from "@/layouts/AppLayout";
 import Index from "./pages/Index";
 import Producten from "./pages/Producten";
 import ProductDetail from "./pages/ProductDetail";
-import Sync from "./pages/Sync";
+import MijnLandelijkeProducten from "./pages/MijnLandelijkeProducten";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -23,7 +23,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/producten" element={<Producten />} />
             <Route path="/producten/:id" element={<ProductDetail />} />
-            <Route path="/sync" element={<Sync />} />
+            <Route path="/landelijke-producten" element={<MijnLandelijkeProducten />} />
             <Route path="/instellingen" element={<div className="text-muted-foreground">Instellingen — binnenkort beschikbaar</div>} />
           </Route>
           <Route path="*" element={<NotFound />} />

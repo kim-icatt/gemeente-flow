@@ -3,7 +3,7 @@ import { mockProducts } from "@/data/mockProducts";
 import { SyncBadge } from "@/components/SyncBadge";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Lock, ChevronRight } from "lucide-react";
+import { ExternalLink, Lock, ChevronRight, Globe } from "lucide-react";
 
 export function ProductList() {
   const navigate = useNavigate();
@@ -19,6 +19,9 @@ export function ProductList() {
           <div className="flex items-center justify-between">
             <div className="flex-1 min-w-0">
               <div className="flex items-center gap-2 mb-1">
+                {product.isLandelijk && (
+                  <Globe className="h-3.5 w-3.5 text-primary shrink-0" />
+                )}
                 <h3 className="font-heading font-semibold text-foreground truncate">
                   {product.name}
                 </h3>
